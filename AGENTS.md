@@ -1,86 +1,109 @@
-# Quick Solutions — VSL Funnel
+# DekorPaint — VSL Funnel
 
-**Brand**: Quick Solutions (arquitectos de la cadena de suministro — IFAC methodology).  
-**Vocero**: Jefferson Bazán.
+**Brand**: DekorPaint (recubrimientos técnicos avanzados para industria y residencias exclusivas).  
+**Vocero**: Alejandro Bravo.
 
 ## Stack
 
 - Vue 3 + Vite 7 + TypeScript + SCSS + Pinia + vue-router
-- `@` → `./src` (vite alias)
+- `@` → `./src` (alias de Vite y de `tsconfig.app.json`)
 - pnpm
-- FontAwesome 6 via CDN (`index.html`). Usar `<i class="fa-solid fa-...">`, NO emojis
-- SCSS: `colorVariables.module.scss` auto-inyectado global via `vite.config.ts` `additionalData`
-- Wistia player (`wistia-player` custom element, media-id: `bivr0yu5qp`)
-- GSAP activo en `ToolsView.vue` (ScrollTrigger registrado)
+- FontAwesome 6 vía CDN en `index.html`: usar `<i class="fa-solid fa-...">`, **nunca emojis**
+- SCSS: `colorVariables.module.scss` auto-inyectado global vía `additionalData` en `vite.config.ts`
+- Wistia player (`wistia-player` custom element, media-id: `e3o2zxds45`)
+- GSAP + ScrollTrigger en `ToolsView.vue` (existe en disco pero **no está ruteada**)
 
 ## Comandos
 
 ```sh
-pnpm dev           # dev server (localhost)
-pnpm build         # type-check → build (via npm-run-all2)
-pnpm type-check    # vue-tsc --build
+pnpm dev           # dev server
+pnpm build         # run-p type-check "build-only" — en paralelo vía npm-run-all2
+pnpm build-only    # vite build (sin type-check)
+pnpm type-check    # vue-tsc --build (usa project references de tsconfig)
 pnpm format        # prettier --write src/
 pnpm preview       # vite preview
 ```
 
-Prettier: sin semicolons, single quotes, printWidth 100.
+Prettier (`.prettierrc.json`): sin semicolons, single quotes, `printWidth: 100`.
 
-## Rutas & flujo del funnel
+## Rutas y flujo del funnel
 
 ```
-/           → FunnelView   (landing + RegistrationModal)
-/ver-video  → VideoView    (VSL + timer 2min + contact guard overlay)
-/agendar    → BookingView  (GHL calendar iframe)
-/cita-confirmada → BookedView
-/sin-espacio → NoSpaceView (cooldown 48h)
-/politicas-privacidad, /aviso-legal (públicas, sin guard)
+/                      → FunnelView   (landing + RegistrationModal)
+/registro-vsl-tr       → alias de /
+/ver-video             → VideoView    (VSL + timer 2 min + overlay de captura)
+/agendar               → BookingView  (iframe de calendario GHL)
+/cita-confirmada       → BookedView
+/sin-espacio           → NoSpaceView  (cooldown 48 h)
+/politicas-privacidad  → PrivacyPolicyView  (pública, sin guard)
+/aviso-legal           → LegalNoticeView    (pública, sin guard)
 ```
 
-Route alias: `/registro-vsl-tr` → `/`.
+## Routing guards
 
-## Routing guards (centralizados en `src/router/index.ts:179`)
+Centralizados en `src/router/index.ts` (~línea 177).
 
-- **`os_booked_at`**: 3-day TTL. Si fresco → redirige todo a `/cita-confirmada`.
-- **`os_disq_at`**: 48h TTL. Si fresco → bloquea `/agendar` y `/cita-confirmada` → `/sin-espacio`.
+- **`os_booked_at`**: TTL 3 días. Si está fresco → cualquier ruta redirige a `/cita-confirmada`.
+- **`os_disq_at`**: TTL 48 h. Si está fresco → `/agendar` y `/cita-confirmada` redirigen a `/sin-espacio`.
 - `/sin-espacio` sin `os_disq_at` fresco → redirige a `/`.
 - `/cita-confirmada` sin `os_booked_at` fresco → redirige a `/`.
-- Rutas legales no tienen guard.
+- Las rutas legales saltan los guards.
 
-## LocalStorage
+## LocalStorage / sessionStorage
 
 | Key | Value | Escrito por |
 |---|---|---|
-| `os_contact` | `{ nombre, apellido, negocio, email, telefono, timestamp }` | `RegistrationModal` + `VideoView` capture |
-| `os_disq_at` | timestamp ms | `CalendarModal` al no calificar (presupuesto logístico < $3,000/mes) |
-| `os_booked_at` | timestamp ms | `BookingView` al confirmar cita (`postMessage`) |
+| `os_contact` | `{ nombre, apellido, negocio, email, telefono, timestamp }` | `RegistrationModal` y `VideoView` capture |
+| `os_disq_at` | timestamp ms | `CalendarModal` al descalificar (solo en producción) |
+| `os_booked_at` | timestamp ms | `BookingView` al recibir `msgsndr-booking-complete` |
+| `os_fb` | `{ fbclid, fbc, fbp, utm_* }` | `FunnelView` en mount (sessionStorage) |
+| `alu_page_entry` | timestamp ms | `FunnelView` en mount (sessionStorage) |
+| `os_complete_fired` | `'1'` | `BookedView` en mount (sessionStorage) |
 
-## Calificación (CalendarModal)
+## Calificación (`CalendarModal`)
 
-Descalifica si `presupuesto === 'menos3000'` (< $3,000 USD/mes en logística internacional). Guarda `os_disq_at` (solo en producción). Redirige a `/sin-espacio`.
+- Descalifica si `presupuesto === 'menos3000'` (< $3,000 USD en el proyecto de recubrimiento).
+- Al descalificar: guarda `os_disq_at` y redirige a `/sin-espacio`. El guardado se omite en `localhost`.
+- Al calificar: dispara pixel `Lead` y redirige a `/agendar`.
 
-## GHL
+## GHL / tracking
 
-- Calendar booking: `https://api.leadconnectorhq.com/widget/booking/bDoTPmyIA6ng4o5iqD9i` + `?firstName=...&email=...&phone=` desde `os_contact`
-- Tracking webhook: configurable via `VITE_WEBHOOK_TRACKING` env var
-- Evento confirmación: `postMessage(['msgsndr-booking-complete', {...}])`
-- Altura dinámica: `postMessage({ type: 'booking-app', height: N })`
-- Script embed: `https://api.leadconnectorhq.com/js/form_embed.js`
+- Calendar URL: `https://api.leadconnectorhq.com/widget/booking/AV9mxK0SEB9vcYGDEKjP`
+- Prefill: `?firstName=&email=&phone=` leídos de `os_contact`.
+- Confirmación de cita: escucha `postMessage(['msgsndr-booking-complete', ...])`.
+- Altura dinámica del iframe: escucha `postMessage({ type: 'booking-app', height: N })`.
+- Script embed de GHL: `https://api.leadconnectorhq.com/js/form_embed.js` inyectado en `BookingView`.
+
+### Variables de entorno de webhooks
+
+```sh
+VITE_WEBHOOK_REGISTRO       # webhook de registro (RegistrationModal) → URL real de DekorPaint
+VITE_WEBHOOK_CALIFICACION   # webhook de cualificación (CalendarModal) → mock/placeholder por ahora
+VITE_WEBHOOK_TRACKING       # tracking genérico (ghl.ts) → mock/placeholder por ahora
+```
+
+Webhook de registro por defecto en `RegistrationModal.vue`:  
+`https://services.leadconnectorhq.com/hooks/BTN0QFH5yTHaUtgYIE1e/webhook-trigger/kQSFLgQk5q9S7rdbJQCH`
 
 ## Meta Pixel
 
-ID: `1886197448722189`. Eventos trackeados: `PageView`, `ViewContent`, `CompleteRegistration`, `Lead`.
+- ID actual: `1886197448722189`.
+- Eventos trackeados: `PageView`, `ViewContent`, `CompleteRegistration`, `Lead`.
+- Parámetros de atribución se capturan en `sessionStorage['os_fb']` vía `src/utils/fbclid.ts`.
+- **Nota**: el Pixel ID debería actualizarse al de DekorPaint cuando esté disponible.
 
-## Reglas de estilo
+## Convenciones de estilo / UX
 
-- Sin Header/Footer de navegación global (existen en disco, no importados)
-- `BookedView`: padding centralizado en `.booked__main`
-- Countdown de urgencia en Funnel: bloques de 6h
-- Social proof toast (FOMO) en Funnel: rotación con 3s delay inicial, 5s visibles, 2s gap
+- No hay `TheHeader`/`TheFooter` globales montados; existen en disco pero `App.vue` solo renderiza `<RouterView />`.
+- Usar solo íconos FontAwesome; nunca emojis en la UI.
+- `BookedView`: padding centralizado en `.booked__main`.
+- Countdown de urgencia en Funnel: se reinicia cada bloque de 6 h.
+- Toast de social proof: 3 s de delay inicial, 5 s visibles, 2 s de gap.
 
-## Meta
+## Gotchas de dev / deploy
 
-- `node`: `^20.19.0 || >=22.12.0`
-- Sin tests, sin CI config
-- Dev server permite host: `38828430451a.ngrok-free.app`
-- SEO dinámico via router `afterEach`
-- Session storage: `alu_page_entry` (FunnelView), `os_complete_fired` (BookedView)
+- `node`: `^20.19.0 || >=22.12.0`.
+- Sin tests, sin CI config.
+- Dev server permite host: `38828430451a.ngrok-free.app` (en `vite.config.ts`).
+- SEO dinámico vía `router.afterEach` (title, description, OG, canonical).
+- `ToolsView.vue` no está cableada al router; es una página huérfana en disco.

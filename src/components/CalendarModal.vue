@@ -17,7 +17,7 @@ const touched = ref(false)
 
 const form = ref({
   tipo: '',
-  volumen: '',
+  superficie: '',
   presupuesto: '',
   reto: '',
   consent: false,
@@ -27,7 +27,7 @@ const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length
 
 const isValid = () =>
   !!form.value.tipo &&
-  !!form.value.volumen &&
+  !!form.value.superficie &&
   !!form.value.presupuesto &&
   wordCount(form.value.reto) >= 10 &&
   form.value.consent
@@ -47,44 +47,47 @@ const handleSubmit = async () => {
   const scheduleEventId = generateEventId('schedule')
 
   const tipoLabel: Record<string, string> = {
-    importacion: 'Importación de materia prima / insumos',
-    maquinaria: 'Importación de maquinaria / equipos',
-    exportacion: 'Exportación',
-    ambos: 'Ambos (importación y exportación)',
+    planta_industrial: 'Planta industrial / manufactura',
+    bodega_logistica: 'Bodega / centro logístico',
+    laboratorio_clinica: 'Laboratorio / clínica / hospital',
+    residencia_exclusiva: 'Residencia exclusiva / edificio premium',
+    comercial_showroom: 'Local comercial / showroom',
+    otros: 'Otros',
   }
-  const volumenLabel: Record<string, string> = {
-    inicio: 'Menos de 1 contenedor al mes',
-    pequeno: '1–5 contenedores al mes',
-    medio: '6–20 contenedores al mes',
-    alto: 'Más de 20 contenedores al mes',
+  const superficieLabel: Record<string, string> = {
+    pisos_industriales: 'Pisos industriales (epóxico / autonivelante)',
+    impermeabilizacion: 'Impermeabilización (cubiertas / losas)',
+    pintura_arquitectonica: 'Pintura arquitectónica premium',
+    senalizacion: 'Señalización y demarcación industrial',
+    multiples: 'Múltiples superficies',
   }
   const presupuestoLabel: Record<string, string> = {
-    menos3000: 'Menos de $3,000 USD/mes',
-    mas3000: '$3,000–$10,000 USD/mes',
-    mas10000: '$10,000–$30,000 USD/mes',
-    mas30000: 'Más de $30,000 USD/mes',
+    menos3000: 'Menos de $3,000 USD',
+    mas3000: '$3,000 – $10,000 USD',
+    mas10000: '$10,000 – $30,000 USD',
+    mas30000: 'Más de $30,000 USD',
   }
 
   const etiquetas = [
-    'funnel-quicksolutions',
+    'funnel-dekorpaint',
     'step-2-cualificacion',
-    califica ? 'califica-qs' : 'no-califica-qs',
+    califica ? 'califica-dp' : 'no-califica-dp',
     `tipo-${form.value.tipo}`,
-    `volumen-${form.value.volumen}`,
+    `superficie-${form.value.superficie}`,
     `budget-${form.value.presupuesto}`,
   ]
 
   const notas = `
 ━━━━━━━━━━━━━━━━━━━━━━━━
-QUICK SOLUTIONS — Cualificación
+DEKORPAINT — Cualificación
 ━━━━━━━━━━━━━━━━━━━━━━━━
 👤 ${contact.nombre} ${contact.apellido}
 📧 ${contact.email}
 📱 ${contact.telefono}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📦 Tipo: ${tipoLabel[form.value.tipo] ?? form.value.tipo}
-📊 Volumen: ${volumenLabel[form.value.volumen] ?? form.value.volumen}
-💰 Presupuesto: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
+🏭 Tipo de infraestructura: ${tipoLabel[form.value.tipo] ?? form.value.tipo}
+🎨 Superficie: ${superficieLabel[form.value.superficie] ?? form.value.superficie}
+💰 Presupuesto estimado: ${presupuestoLabel[form.value.presupuesto] ?? form.value.presupuesto}
 💡 Reto: ${form.value.reto}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
@@ -103,7 +106,7 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
     phone: contact.telefono,
     paso: '2-cualificacion',
     tipo: form.value.tipo,
-    volumen: form.value.volumen,
+    superficie: form.value.superficie,
     presupuesto: form.value.presupuesto,
     reto: form.value.reto,
     cualifica: califica ? 'true' : 'false',
@@ -123,10 +126,11 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   }).catch(() => {})
-
-  ;(window as any).fbq?.('track', 'CompleteRegistration',
+  ;(window as any).fbq?.(
+    'track',
+    'CompleteRegistration',
     { content_name: 'cualificacion-step2', status: califica ? 'califica' : 'no-califica' },
-    { eventID: scheduleEventId }
+    { eventID: scheduleEventId },
   )
 
   submitting.value = false
@@ -141,57 +145,78 @@ ${califica ? '✅ CALIFICA' : '❌ NO CALIFICA — Presupuesto insuficiente'}
   }
 }
 
-const onKeydown = (e: KeyboardEvent) => { if (e.key === 'Escape') emit('close') }
+const onKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') emit('close')
+}
 
 onMounted(() => document.addEventListener('keydown', onKeydown))
 onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 
-watch(() => props.open, (v) => {
-  if (v) {
-    touched.value = false
-    form.value = { tipo: '', volumen: '', presupuesto: '', reto: '', consent: false }
-  }
-  document.body.style.overflow = v ? 'hidden' : ''
-})
+watch(
+  () => props.open,
+  (v) => {
+    if (v) {
+      touched.value = false
+      form.value = { tipo: '', superficie: '', presupuesto: '', reto: '', consent: false }
+    }
+    document.body.style.overflow = v ? 'hidden' : ''
+  },
+)
 </script>
 
 <template>
   <Teleport to="body">
     <Transition name="cal-fade">
-      <div v-if="open" class="cal-backdrop" @click.self="emit('close')" role="dialog" aria-modal="true" aria-labelledby="cal-title">
-
+      <div
+        v-if="open"
+        class="cal-backdrop"
+        @click.self="emit('close')"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cal-title"
+      >
         <div class="cal-modal">
-
           <button class="cal-close" @click="emit('close')" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
           </button>
 
           <div class="cal-header">
             <div class="cal-header-icon" aria-hidden="true">
-              <i class="fa-solid fa-ship"></i>
+              <i class="fa-solid fa-paint-roller"></i>
             </div>
             <h2 id="cal-title" class="cal-title">
               Antes de agendar, cuéntanos sobre
-              <span class="cal-accent">tu operación</span>
+              <span class="cal-accent">tu proyecto</span>
             </h2>
-            <p class="cal-subtitle">4 preguntas para preparar tu auditoría — 60 segundos.</p>
+            <p class="cal-subtitle">
+              4 preguntas para preparar tu diagnóstico técnico — 60 segundos.
+            </p>
           </div>
 
           <form class="cal-form" @submit.prevent="handleSubmit" novalidate>
-
-            <!-- Q1 — Tipo -->
+            <!-- Q1 — Tipo de infraestructura -->
             <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.tipo }">
               <legend class="cal-legend">
                 <span class="cal-q-num">01</span>
-                ¿Qué tipo de operaciones realizas?
+                ¿Qué tipo de infraestructura necesita el recubrimiento?
               </legend>
               <div class="cal-options">
-                <label v-for="opt in [
-                  { value: 'importacion', label: 'Importación de materia prima / insumos' },
-                  { value: 'maquinaria', label: 'Importación de maquinaria / equipos' },
-                  { value: 'exportacion', label: 'Exportación' },
-                  { value: 'ambos', label: 'Ambos (importación y exportación)' },
-                ]" :key="opt.value" class="cal-option" :class="{ selected: form.tipo === opt.value }">
+                <label
+                  v-for="opt in [
+                    { value: 'planta_industrial', label: 'Planta industrial / manufactura' },
+                    { value: 'bodega_logistica', label: 'Bodega / centro logístico' },
+                    { value: 'laboratorio_clinica', label: 'Laboratorio / clínica / hospital' },
+                    {
+                      value: 'residencia_exclusiva',
+                      label: 'Residencia exclusiva / edificio premium',
+                    },
+                    { value: 'comercial_showroom', label: 'Local comercial / showroom' },
+                    { value: 'otros', label: 'Otros' },
+                  ]"
+                  :key="opt.value"
+                  class="cal-option"
+                  :class="{ selected: form.tipo === opt.value }"
+                >
                   <input type="radio" :value="opt.value" v-model="form.tipo" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
                   <span class="cal-option__label">{{ opt.label }}</span>
@@ -200,49 +225,79 @@ watch(() => props.open, (v) => {
               <span v-if="touched && !form.tipo" class="cal-error">Selecciona una opción</span>
             </fieldset>
 
-            <!-- Q2 — Volumen -->
-            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.volumen }">
+            <!-- Q2 — Superficie -->
+            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && !form.superficie }">
               <legend class="cal-legend">
                 <span class="cal-q-num">02</span>
-                ¿Cuál es tu volumen mensual aproximado?
+                ¿Qué superficie necesitas tratar?
               </legend>
               <div class="cal-options">
-                <label v-for="opt in [
-                  { value: 'inicio', label: 'Menos de 1 contenedor al mes' },
-                  { value: 'pequeno', label: '1–5 contenedores al mes' },
-                  { value: 'medio', label: '6–20 contenedores al mes' },
-                  { value: 'alto', label: 'Más de 20 contenedores al mes' },
-                ]" :key="opt.value" class="cal-option" :class="{ selected: form.volumen === opt.value }">
-                  <input type="radio" :value="opt.value" v-model="form.volumen" hidden />
+                <label
+                  v-for="opt in [
+                    {
+                      value: 'pisos_industriales',
+                      label: 'Pisos industriales (epóxico / autonivelante)',
+                    },
+                    {
+                      value: 'impermeabilizacion',
+                      label: 'Impermeabilización (cubiertas / losas)',
+                    },
+                    { value: 'pintura_arquitectonica', label: 'Pintura arquitectónica premium' },
+                    { value: 'senalizacion', label: 'Señalización y demarcación industrial' },
+                    { value: 'multiples', label: 'Múltiples superficies' },
+                  ]"
+                  :key="opt.value"
+                  class="cal-option"
+                  :class="{ selected: form.superficie === opt.value }"
+                >
+                  <input type="radio" :value="opt.value" v-model="form.superficie" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
                   <span class="cal-option__label">{{ opt.label }}</span>
                 </label>
               </div>
-              <span v-if="touched && !form.volumen" class="cal-error">Selecciona una opción</span>
+              <span v-if="touched && !form.superficie" class="cal-error"
+                >Selecciona una opción</span
+              >
             </fieldset>
 
-            <!-- Q3 — Presupuesto logístico -->
-            <fieldset class="cal-fieldset cal-fieldset--budget" :class="{ 'has-error': touched && !form.presupuesto, 'has-investment': form.presupuesto && form.presupuesto !== 'menos3000' }">
+            <!-- Q3 — Presupuesto -->
+            <fieldset
+              class="cal-fieldset cal-fieldset--budget"
+              :class="{
+                'has-error': touched && !form.presupuesto,
+                'has-investment': form.presupuesto && form.presupuesto !== 'menos3000',
+              }"
+            >
               <legend class="cal-legend cal-legend--budget">
                 <span class="cal-q-num cal-q-num--budget">03</span>
-                <span>¿Cuál es tu presupuesto mensual en logística internacional?</span>
+                <span>¿Cuál es el rango estimado de inversión?</span>
                 <i class="fa-solid fa-chart-line cal-legend-chart" aria-hidden="true"></i>
               </legend>
               <div class="cal-options">
-                <label v-for="opt in [
-                  { value: 'mas30000', label: 'Más de $30,000 USD/mes', premium: true },
-                  { value: 'mas10000', label: '$10,000 – $30,000 USD/mes', premium: true },
-                  { value: 'mas3000', label: '$3,000 – $10,000 USD/mes' },
-                  { value: 'menos3000', label: 'Menos de $3,000 USD/mes' },
-                ]" :key="opt.value" class="cal-option" :class="{
-                  selected: form.presupuesto === opt.value,
-                  'cal-option--premium': opt.premium && form.presupuesto === opt.value,
-                  'cal-option--low': opt.value === 'menos3000' && form.presupuesto === 'menos3000',
-                  'cal-option--premium-hover': opt.premium && form.presupuesto !== opt.value,
-                }">
+                <label
+                  v-for="opt in [
+                    { value: 'mas30000', label: 'Más de $30,000 USD', premium: true },
+                    { value: 'mas10000', label: '$10,000 – $30,000 USD', premium: true },
+                    { value: 'mas3000', label: '$3,000 – $10,000 USD' },
+                    { value: 'menos3000', label: 'Menos de $3,000 USD' },
+                  ]"
+                  :key="opt.value"
+                  class="cal-option"
+                  :class="{
+                    selected: form.presupuesto === opt.value,
+                    'cal-option--premium': opt.premium && form.presupuesto === opt.value,
+                    'cal-option--low':
+                      opt.value === 'menos3000' && form.presupuesto === 'menos3000',
+                    'cal-option--premium-hover': opt.premium && form.presupuesto !== opt.value,
+                  }"
+                >
                   <input type="radio" :value="opt.value" v-model="form.presupuesto" hidden />
                   <span class="cal-option__radio" aria-hidden="true" />
-                  <i v-if="opt.premium" class="fa-solid fa-gem cal-option__gem" aria-hidden="true"></i>
+                  <i
+                    v-if="opt.premium"
+                    class="fa-solid fa-gem cal-option__gem"
+                    aria-hidden="true"
+                  ></i>
                   <span class="cal-option__label">{{ opt.label }}</span>
                 </label>
               </div>
@@ -250,15 +305,18 @@ watch(() => props.open, (v) => {
             </fieldset>
 
             <!-- Q4 — Reto -->
-            <fieldset class="cal-fieldset" :class="{ 'has-error': touched && wordCount(form.reto) < 10 }">
+            <fieldset
+              class="cal-fieldset"
+              :class="{ 'has-error': touched && wordCount(form.reto) < 10 }"
+            >
               <legend class="cal-legend">
                 <span class="cal-q-num">04</span>
-                ¿Cuál es tu principal desafío logístico o aduanero?
+                ¿Cuál es el principal desafío de tu superficie?
               </legend>
               <textarea
                 v-model="form.reto"
                 class="cal-textarea"
-                placeholder="Ej: Tenemos retenciones frecuentes en aduana por clasificación arancelaria de nuestra materia prima importada desde Asia..."
+                placeholder="Ej: El piso de la planta de empaque se descascara con el tráfico de montacargas y los lavados con agua caliente..."
                 rows="4"
                 aria-describedby="q4-hint"
               ></textarea>
@@ -275,10 +333,13 @@ watch(() => props.open, (v) => {
               <input type="checkbox" v-model="form.consent" />
               <span class="cal-consent__box" aria-hidden="true" />
               <span class="cal-consent__text">
-                Acepto que Quick Solutions me contacte para brindarme una sesión de auditoría logística personalizada.
+                Acepto que DekorPaint me contacte para brindarme una sesión de diagnóstico técnico
+                avanzado personalizada.
               </span>
             </label>
-            <span v-if="touched && !form.consent" class="cal-error">Debes aceptar para continuar</span>
+            <span v-if="touched && !form.consent" class="cal-error"
+              >Debes aceptar para continuar</span
+            >
 
             <button type="submit" class="cal-submit" :disabled="submitting">
               <span v-if="!submitting">
@@ -290,9 +351,7 @@ watch(() => props.open, (v) => {
                 Procesando...
               </span>
             </button>
-
           </form>
-
         </div>
       </div>
     </Transition>
@@ -304,9 +363,13 @@ watch(() => props.open, (v) => {
 @use '@/styles/colorVariables.module.scss' as colors;
 
 .cal-fade-enter-active,
-.cal-fade-leave-active { transition: opacity 0.25s ease; }
+.cal-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
 .cal-fade-enter-from,
-.cal-fade-leave-to { opacity: 0; }
+.cal-fade-leave-to {
+  opacity: 0;
+}
 
 .cal-backdrop {
   position: fixed;
@@ -330,7 +393,7 @@ watch(() => props.open, (v) => {
   overflow-y: auto;
   position: relative;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-  border: 1px solid #E4EDF7;
+  border: 1px solid #e4edf7;
 }
 
 .cal-close {
@@ -341,21 +404,26 @@ watch(() => props.open, (v) => {
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #F5F8FF;
-  color: #8A9BB5;
+  background: #f5f8ff;
+  color: #8a9bb5;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   z-index: 1;
-  &:hover { background: #E4EDF7; color: colors.$OS-DARK; }
+  &:hover {
+    background: #e4edf7;
+    color: colors.$OS-DARK;
+  }
 }
 
 .cal-header {
   padding: 2rem 2rem 1.25rem;
-  border-bottom: 1px solid #F0F4FB;
+  border-bottom: 1px solid #f0f4fb;
   text-align: center;
 }
 
@@ -368,7 +436,10 @@ watch(() => props.open, (v) => {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-  i { color: #ffffff; font-size: 1.4rem; }
+  i {
+    color: #ffffff;
+    font-size: 1.4rem;
+  }
 }
 
 .cal-title {
@@ -380,11 +451,13 @@ watch(() => props.open, (v) => {
   letter-spacing: -0.02em;
 }
 
-.cal-accent { color: colors.$OS-RED; }
+.cal-accent {
+  color: colors.$OS-RED;
+}
 
 .cal-subtitle {
   font-size: 0.86rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0;
 }
 
@@ -400,7 +473,10 @@ watch(() => props.open, (v) => {
   padding: 0;
   margin: 0;
 
-  &.has-error .cal-options { border-color: colors.$OS-RED; border-radius: 10px; }
+  &.has-error .cal-options {
+    border-color: colors.$OS-RED;
+    border-radius: 10px;
+  }
 
   &--budget {
     border: 1.5px solid transparent;
@@ -444,8 +520,15 @@ watch(() => props.open, (v) => {
 }
 
 @keyframes chart-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
 }
 
 .cal-q-num {
@@ -478,24 +561,29 @@ watch(() => props.open, (v) => {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border: 1.5px solid #E4EDF7;
+  border: 1.5px solid #e4edf7;
   border-radius: 10px;
   cursor: pointer;
-  transition: border-color 0.18s, background 0.18s;
-  background: #FAFBFF;
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+  background: #fafbff;
 
-  &:hover { border-color: colors.$OS-BLUE; background: #F0F6FF; }
+  &:hover {
+    border-color: colors.$OS-BLUE;
+    background: #f0f6ff;
+  }
 
   &.selected {
     border-color: colors.$OS-NAVY;
-    background: #EEF4FF;
+    background: #eef4ff;
   }
 
   &__radio {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 2px solid #C8D8ED;
+    border: 2px solid #c8d8ed;
     flex-shrink: 0;
     position: relative;
     transition: border-color 0.18s;
@@ -514,34 +602,42 @@ watch(() => props.open, (v) => {
 
   &__label {
     font-size: 0.88rem;
-    color: #3A4F6A;
+    color: #3a4f6a;
     font-weight: 500;
-    .cal-option.selected & { color: colors.$OS-DARK; font-weight: 600; }
+    .cal-option.selected & {
+      color: colors.$OS-DARK;
+      font-weight: 600;
+    }
   }
 }
 
 .cal-textarea {
   width: 100%;
-  border: 1.5px solid #E4EDF7;
+  border: 1.5px solid #e4edf7;
   border-radius: 10px;
   padding: 0.85rem 1rem;
   font-family: fonts.$font-secondary;
   font-size: 0.88rem;
   color: colors.$OS-DARK;
-  background: #FAFBFF;
+  background: #fafbff;
   resize: vertical;
   outline: none;
   transition: border-color 0.18s;
   line-height: 1.55;
   box-sizing: border-box;
-  &::placeholder { color: #B0C0D5; }
-  &:focus { border-color: colors.$OS-BLUE; background: #F5F9FF; }
+  &::placeholder {
+    color: #b0c0d5;
+  }
+  &:focus {
+    border-color: colors.$OS-BLUE;
+    background: #f5f9ff;
+  }
 }
 
 .cal-hint {
   display: block;
   font-size: 0.76rem;
-  color: #B0C0D5;
+  color: #b0c0d5;
   margin-top: 0.35rem;
 }
 
@@ -558,12 +654,14 @@ watch(() => props.open, (v) => {
   gap: 0.75rem;
   cursor: pointer;
 
-  input { display: none; }
+  input {
+    display: none;
+  }
 
   &__box {
     width: 18px;
     height: 18px;
-    border: 2px solid #C8D8ED;
+    border: 2px solid #c8d8ed;
     border-radius: 5px;
     flex-shrink: 0;
     margin-top: 1px;
@@ -575,13 +673,18 @@ watch(() => props.open, (v) => {
     input:checked ~ & {
       background: colors.$OS-NAVY;
       border-color: colors.$OS-NAVY;
-      &::after { content: '✓'; color: #ffffff; font-size: 0.7rem; font-weight: 800; }
+      &::after {
+        content: '✓';
+        color: #ffffff;
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
     }
   }
 
   &__text {
     font-size: 0.82rem;
-    color: #6A7E95;
+    color: #6a7e95;
     line-height: 1.5;
   }
 }
@@ -602,9 +705,17 @@ watch(() => props.open, (v) => {
   letter-spacing: 0.04em;
   cursor: pointer;
   width: 100%;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
   box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
-  &:hover:not(:disabled) { background: #AA0000; transform: translateY(-1px); }
-  &:disabled { opacity: 0.65; cursor: not-allowed; }
+  &:hover:not(:disabled) {
+    background: #aa0000;
+    transform: translateY(-1px);
+  }
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
 }
 </style>

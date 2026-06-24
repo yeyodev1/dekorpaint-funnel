@@ -1,56 +1,69 @@
-// Quick Solutions — Arquitectos de la Cadena de Suministro
-$QS-NAVY:    #0A1628;   // Deep Navy — Brand Principal
-$QS-BLUE:    #0052A5;   // Trust Blue — Secundario
-$QS-GOLD:    #C99700;   // Amber/Gold — Acento premium
-$QS-RED:     #CC0000;   // Bold Red — CTAs y urgencia
-$QS-DARK:    #0A1628;   // Texto oscuro
-$QS-LIGHT:   #F4F7FC;   // Fondo claro
-$QS-SURFACE: #F8FAFE;   // Superficies/cards
+// DekorPaint — Recubrimientos técnicos avanzados
+$DK-NAVY: #0b1628; // Deep Navy — Brand Principal
+$DK-BLUE: #0d6efd; // Technical Blue — Secundario
+$DK-ORANGE: #f97316; // Energy Orange — Acento
+$DK-RED: #dc2626; // Bold Red — CTAs y urgencia
+$DK-DARK: #0b1628; // Texto oscuro
+$DK-LIGHT: #f4f7fc; // Fondo claro
+$DK-SURFACE: #f8fafe; // Superficies/cards
 
 // Urgency / inmediatez
-$QS-URGENT:        #CC0000;
-$QS-URGENT-DARK:   #AA0000;
-$QS-URGENT-LIGHT:  #FF6B6B;
-$QS-URGENT-BG:     #FFF5F5;
+$DK-URGENT: #f97316;
+$DK-URGENT-DARK: #ea580c;
+$DK-URGENT-LIGHT: #fb923c;
+$DK-URGENT-BG: #fff7ed;
+
+// Legacy Quick Solutions (mantienen compatibilidad)
+$QS-NAVY: $DK-NAVY;
+$QS-BLUE: $DK-BLUE;
+$QS-GOLD: $DK-ORANGE;
+$QS-RED: $DK-RED;
+$QS-DARK: $DK-DARK;
+$QS-LIGHT: $DK-LIGHT;
+$QS-SURFACE: $DK-SURFACE;
+$QS-URGENT: $DK-URGENT;
+$QS-URGENT-DARK: $DK-URGENT-DARK;
+$QS-URGENT-LIGHT: $DK-URGENT-LIGHT;
+$QS-URGENT-BG: $DK-URGENT-BG;
 
 // Aliases legacy Aluvicopp (mantienen compatibilidad)
-$ALU-NAVY:    $QS-NAVY;
-$ALU-BLUE:    $QS-BLUE;
-$ALU-SILVER:  #8E9CB2;
-$ALU-RED:     $QS-RED;
-$ALU-DARK:    $QS-DARK;
-$ALU-LIGHT:   $QS-LIGHT;
+$ALU-NAVY: $QS-NAVY;
+$ALU-BLUE: $QS-BLUE;
+$ALU-SILVER: #8e9cb2;
+$ALU-RED: $QS-RED;
+$ALU-DARK: $QS-DARK;
+$ALU-LIGHT: $QS-LIGHT;
 $ALU-SURFACE: $QS-SURFACE;
-$ALU-URGENT:        $QS-URGENT;
-$ALU-URGENT-DARK:   $QS-URGENT-DARK;
-$ALU-URGENT-LIGHT:  $QS-URGENT-LIGHT;
-$ALU-URGENT-BG:     $QS-URGENT-BG;
+$ALU-URGENT: $QS-URGENT;
+$ALU-URGENT-DARK: $QS-URGENT-DARK;
+$ALU-URGENT-LIGHT: $QS-URGENT-LIGHT;
+$ALU-URGENT-BG: $QS-URGENT-BG;
 
 // Aliases legacy Bakano (mantienen compatibilidad — no usar para código nuevo)
-$BAKANO-PINK:   $QS-NAVY;
-$BAKANO-DARK:   $QS-DARK;
-$BAKANO-LIGHT:  $QS-LIGHT;
+$BAKANO-PINK: $QS-NAVY;
+$BAKANO-DARK: $QS-DARK;
+$BAKANO-LIGHT: $QS-LIGHT;
 $BAKANO-PURPLE: $QS-BLUE;
-$BAKANO-GREEN:  #8E9CB2;
+$BAKANO-GREEN: #8e9cb2;
 $BAKANO-PRIMARY: $QS-NAVY;
 
 // Aliases legacy Ale Barreto (mantienen compatibilidad)
-$AB-WOOD:     #8E9CB2;
-$AB-EARTH:    $QS-BLUE;
-$AB-FOREST:   $QS-NAVY;
-$AB-SAGE:     #8E9CB2;
-$AB-CREAM:    $QS-LIGHT;
-$AB-WHITE:    #ffffff;
-$AB-URGENT:        $QS-URGENT;
-$AB-URGENT-DARK:   $QS-URGENT-DARK;
-$AB-URGENT-LIGHT:  $QS-URGENT-LIGHT;
-$AB-URGENT-BG:     $QS-URGENT-BG;
+$AB-WOOD: #8e9cb2;
+$AB-EARTH: $QS-BLUE;
+$AB-FOREST: $QS-NAVY;
+$AB-SAGE: #8e9cb2;
+$AB-CREAM: $QS-LIGHT;
+$AB-WHITE: #ffffff;
+$AB-URGENT: $QS-URGENT;
+$AB-URGENT-DARK: $QS-URGENT-DARK;
+$AB-URGENT-LIGHT: $QS-URGENT-LIGHT;
+$AB-URGENT-BG: $QS-URGENT-BG;
 
 // OS Aliases (para mantener compatibilidad con código existente)
-$OS-RED:   $QS-RED;
-$OS-NAVY:  $QS-NAVY;
-$OS-BLUE:  $QS-BLUE;
-$OS-DARK:  $QS-DARK;
+$OS-RED: $DK-RED;
+$OS-NAVY: $DK-NAVY;
+$OS-BLUE: $DK-BLUE;
+$OS-DARK: $DK-DARK;
 
 // Colores base
 $white: #ffffff;

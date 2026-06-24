@@ -22,66 +22,69 @@ const openModal = () => {
 
 const stats = [
   {
-    icon: 'fa-solid fa-building',
-    number: '500+',
-    text: 'Corporaciones multinacionales e industrias confían en nuestra ingeniería de cadena de suministro',
+    icon: 'fa-solid fa-chart-line',
+    number: '70%+',
+    text: 'Reducción promedio en costos de mantenimiento de pisos y recubrimientos industriales',
   },
   {
-    icon: 'fa-solid fa-chart-line',
-    number: '95%',
-    text: 'Reducción de incidencias y retenciones aduaneras con la metodología IFAC',
+    icon: 'fa-solid fa-calendar-check',
+    number: '20+',
+    text: 'Años de durabilidad en recubrimientos técnicos aplicados con el método certificado',
   },
   {
     icon: 'fa-solid fa-award',
-    number: '15+',
-    text: 'Años de experiencia en ingeniería de flujo aduanero y logística de precisión',
+    number: '100%',
+    text: 'De proyectos industriales aprobados en auditorías regulatorias y de seguridad',
   },
 ]
 
 const before = [
-  'Retenciones de contenedores en puerto por errores milimétricos de clasificación arancelaria que paralizan tu producción',
-  'Sobrecostos ocultos por almacenaje, demoras, multas y reclasificaciones de última hora que destruyen tu margen',
-  'Agencias "bomberos" que solo reaccionan cuando el incendio ya ocurrió y te cobran por apagarlo',
-  'Capital de trabajo paralizado por semanas mientras un contenedor retenido espera una corrección documental',
-  'Penalizaciones de clientes internacionales por incumplimiento de plazos debido a fallas logísticas evitables',
+  'Pisos industriales que se desgastan y descascaran — causando paradas de producción, riesgo de accidentes y multas por incumplimiento de normas',
+  'Filtraciones y humedad que corren estructuras, equipos y acabados — generando reparaciones mayores que nadie presupuestó',
+  'Pintura arquitectónica de bajo performance que se decolora, cuartea y exige repintes costosos cada año',
+  'Fallas en señalización de seguridad y demarcación — exponiendo a la empresa a sanciones y a personas a riesgos evitables',
+  'Contratistas que compiten solo por precio, sin preparación del sustrato ni trazabilidad de materiales certificados',
 ]
 
 const pillars = [
   {
     num: '01',
-    icon: 'fa-solid fa-search',
-    title: 'Auditoría Técnica y Control Previo Anticipado',
-    body: 'Revisión profunda en origen: partidas arancelarias, certificados de origen, facturas comerciales y regulaciones fitosanitarias antes de activar el contenedor en el buque. Reduce más del 90% de incidencias y retenciones en puerto de destino.',
+    icon: 'fa-solid fa-trowel-bricks',
+    title: 'Preparación Mecánica del Sustrato y Perfil de Anclaje',
+    body: 'No aplicamos sobre superficies mal preparadas. Realizamos shot blasting, diamantado o sandblasting según norma para crear el perfil de anclaje que exige el sistema. Esto es lo que determina si el recubrimiento dura 2 años o más de 20.',
   },
   {
     num: '02',
-    icon: 'fa-solid fa-arrows-spin',
-    title: 'Sincronización Integral de la Cadena Multimodal',
-    body: 'Unificación directa de transporte internacional (marítimo, aéreo, terrestre), aduana, estiba y transporte local blindado con candados satelitales y escolta armada. Optimiza tiempos de tránsito terrestre hasta en un 32%.',
+    icon: 'fa-solid fa-flask',
+    title: 'Dosificación de Polímeros Certificados de Alta Performance',
+    body: 'Trabajamos con epoxias, poliuretanos cementicios y poliureas de grado industrial, dosificados según ficha técnica y condiciones de uso. Sin mezclas a ojo, sin recetas genéricas: cada proyecto lleva química específica para su carga, tráfico y exposición.',
   },
   {
     num: '03',
-    icon: 'fa-solid fa-shield',
-    title: 'Blindaje de Flujo de Caja y Gestión de Riesgos',
-    body: 'Precalculación matemática de tasas y tributos para eliminar imprevistos financieros. Estructuración de pólizas de seguro al 100% del valor real de la mercancía. Convertimos la logística en un activo medible y de alto rendimiento.',
+    icon: 'fa-solid fa-shield-halved',
+    title: 'Blindaje Regulatorio y Señalización de Seguridad',
+    body: 'Entregamos trazabilidad completa de materiales, especificaciones técnicas y cumplimiento normativo. Además, ejecutamos demarcación y señalización de seguridad industrial para que tu planta pase auditorías sin contratiempos.',
   },
 ]
 
 const testimonials = [
   {
-    quote: 'Necesitábamos que nuestra importación de maquinaria pesada estuviera liberada en máximo 5 días. La agencia anterior nos dejó un contenedor retenido 18 días por un error en el certificado de origen. Con Quick Solutions y su metodología IFAC, no solo liberaron en 48 horas, sino que además nos identificaron $12,000 en sobrecostos que estábamos pagando por rutas ineficientes.',
-    author: 'Ing. Ricardo Méndez',
-    role: 'Gerente de Logística — Corporación Metalúrgica',
+    quote:
+      'Nuestra planta embotelladora tenía pisos industriales deteriorados que generaban paradas constantes y riesgo de accidentes. DekorPaint aplicó su metodología técnica y, a 18 meses, el piso luce como el primer día. Pasamos la auditoría de seguridad sin una sola observación y reducimos los costos de mantenimiento de pisos en más de un 70%.',
+    author: 'Ing. Roberto Vásquez',
+    role: 'Gerente de Planta — Embotelladora Multinacional',
   },
   {
-    quote: 'Creíamos que los retrasos y los gastos imprevistos eran el costo normal de hacer negocios internacionales. Quick Solutions nos demostró que estábamos equivocados. Hoy nuestra cadena de suministro opera con previsibilidad financiera absoluta y nuestros costos logísticos se redujeron un 28%.',
-    author: 'Carolina Santillán',
-    role: 'Directora de Operaciones — Industria Química',
+    quote:
+      'Pensábamos que filtraciones en bodegas eran normales y que había que convivir con ellas. El equipo de Alejandro nos demostró que una impermeabilización técnica bien ejecutada elimina el problema de raíz. Recuperamos espacio, protegimos inventario y dejamos de invertir en parches temporales.',
+    author: 'Carla Mendieta',
+    role: 'Directora de Operaciones — Cadena de Restaurantes Global',
   },
   {
-    quote: 'Al principio dudaba porque nuestro volumen de importación es alto y no quería arriesgar la operación con un cambio de proveedor logístico. Jefferson y su equipo hicieron una auditoría gratuita que nos mostró $45,000 en ahorros potenciales. Eso nos convenció. Llevamos 3 años con ellos y cero retenciones.',
-    author: 'Andrés Montero',
-    role: 'CEO — Grupo Corporativo',
+    quote:
+      'Al principio dudé porque recibí cotizaciones mucho más baratas para pintar el showroom de vehículos premium. Pero DekorPaint no pinta: aplica recubrimientos técnicos. El acabado, la resistencia al tráfico y la imagen de marca son otro nivel. Vale cada dólar de diferencia.',
+    author: 'Andrés Peñafiel',
+    role: 'Propietario — Concesionario de Vehículos Premium',
   },
 ]
 
@@ -104,7 +107,7 @@ const computeRemaining = () => {
 
 const tick = () => {
   const total = computeRemaining()
-  hours.value   = String(Math.floor(total / 3600)).padStart(2, '0')
+  hours.value = String(Math.floor(total / 3600)).padStart(2, '0')
   minutes.value = String(Math.floor((total % 3600) / 60)).padStart(2, '0')
   seconds.value = String(total % 60).padStart(2, '0')
 }
@@ -125,16 +128,16 @@ onUnmounted(() => {
 type Proof = { who: string; where: string; minutesAgo: number }
 
 const PROOFS: Proof[] = [
-  { who: 'Corporación Metalúrgica',       where: 'Guayaquil',     minutesAgo: 3 },
-  { who: 'Industria Química del Sur',     where: 'Quito',         minutesAgo: 8 },
-  { who: 'Grupo Logístico del Pacífico',  where: 'Manta',         minutesAgo: 14 },
-  { who: 'Consorcio Alimenticio',         where: 'Guayaquil',     minutesAgo: 19 },
-  { who: 'Maquinaria Pesada S.A.',        where: 'Cuenca',        minutesAgo: 25 },
-  { who: 'Textiles Internacionales',      where: 'Quito',         minutesAgo: 31 },
-  { who: 'Petroindustria del Ecuador',    where: 'Esmeraldas',    minutesAgo: 38 },
-  { who: 'Laboratorios Farmacéuticos',    where: 'Guayaquil',     minutesAgo: 44 },
-  { who: 'Automotriz Andina',            where: 'Quito',         minutesAgo: 50 },
-  { who: 'Grupo Corporativo M&B',         where: 'Guayaquil',     minutesAgo: 57 },
+  { who: 'Embotelladora Multinacional', where: 'Guayaquil', minutesAgo: 3 },
+  { who: 'Planta de Procesamiento de Alimentos', where: 'Quito', minutesAgo: 8 },
+  { who: 'Concesionario de Vehículos Premium', where: 'Manta', minutesAgo: 14 },
+  { who: 'Cadena Global de Restaurantes', where: 'Guayaquil', minutesAgo: 19 },
+  { who: 'Laboratorio Clínico', where: 'Cuenca', minutesAgo: 25 },
+  { who: 'Bodega Logística', where: 'Quito', minutesAgo: 31 },
+  { who: 'Planta Industrial', where: 'Esmeraldas', minutesAgo: 38 },
+  { who: 'Residencia Exclusiva', where: 'Guayaquil', minutesAgo: 44 },
+  { who: 'Clínica Privada', where: 'Quito', minutesAgo: 50 },
+  { who: 'Centro Comercial', where: 'Guayaquil', minutesAgo: 57 },
 ]
 
 const proofVisible = ref(false)
@@ -179,38 +182,53 @@ const dismissProof = () => {
 
 <template>
   <div class="funnel">
-
     <header class="funnel__topbar">
-      <h2 class="funnel__logo-text">QUICK SOLUTIONS</h2>
-      <p class="funnel__logo-sub">Arquitectos de la Cadena de Suministro</p>
+      <h2 class="funnel__logo-text">DEKORPAINT</h2>
+      <p class="funnel__logo-sub">Recubrimientos Técnicos Avanzados</p>
     </header>
 
     <div class="funnel__urgency" role="banner">
       <div class="funnel__urgency-info">
         <span class="funnel__urgency-dot" aria-hidden="true" />
         <i class="fa-solid fa-bolt funnel__urgency-icon" aria-hidden="true"></i>
-        <span class="funnel__urgency-text">CUPOS PARA <strong>AUDITORÍA LOGÍSTICA GRATUITA</strong> — Cierran en:</span>
+        <span class="funnel__urgency-text"
+          >CUPOS PARA <strong>DIAGNÓSTICO TÉCNICO AVANZADO GRATIS</strong> — Cierran en:</span
+        >
         <div class="funnel__timer" aria-live="polite" aria-label="Tiempo restante">
-          <span class="funnel__timer-block"><strong>{{ hours }}</strong><small>h</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ hours }}</strong
+            ><small>h</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ minutes }}</strong><small>m</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ minutes }}</strong
+            ><small>m</small></span
+          >
           <span class="funnel__timer-sep" aria-hidden="true">:</span>
-          <span class="funnel__timer-block"><strong>{{ seconds }}</strong><small>s</small></span>
+          <span class="funnel__timer-block"
+            ><strong>{{ seconds }}</strong
+            ><small>s</small></span
+          >
         </div>
       </div>
       <button
         type="button"
         class="funnel__urgency-cta"
-        aria-label="Agendar auditoría logística"
+        aria-label="Agendar diagnóstico técnico"
         @click="openModal()"
       >
-        AGENDAR MI AUDITORÍA
+        AGENDAR MI DIAGNÓSTICO
         <span aria-hidden="true">→</span>
       </button>
     </div>
 
     <Transition name="proof-fade">
-      <div v-if="proofVisible && currentProof" class="funnel__proof" role="status" aria-live="polite">
+      <div
+        v-if="proofVisible && currentProof"
+        class="funnel__proof"
+        role="status"
+        aria-live="polite"
+      >
         <div class="funnel__proof-icon" aria-hidden="true">
           <i class="fa-solid fa-circle-check"></i>
         </div>
@@ -220,7 +238,7 @@ const dismissProof = () => {
             <span>{{ currentProof.where }}</span>
           </p>
           <p class="funnel__proof-text">
-            Acaba de agendar una <strong>auditoría logística</strong>
+            Acaba de agendar un <strong>Diagnóstico Técnico Avanzado</strong>
           </p>
           <p class="funnel__proof-meta">
             <i class="fa-solid fa-clock" aria-hidden="true"></i>
@@ -240,58 +258,78 @@ const dismissProof = () => {
 
     <section class="funnel__hero" aria-labelledby="funnel-headline">
       <div class="funnel__container">
-
         <p class="funnel__eyebrow">
-          <i class="fa-solid fa-ship" aria-hidden="true"></i>
-          Ingeniería de la Cadena de Suministro
+          <i class="fa-solid fa-paint-roller" aria-hidden="true"></i>
+          Recubrimientos Técnicos Avanzados
         </p>
 
         <h1 id="funnel-headline" class="funnel__headline">
-          Profesionaliza tu cadena de suministro y elimina las paradas no programadas con
-          <span class="funnel__headline-accent">ingeniería de datos y previsibilidad absoluta</span>
+          Protege tus pisos, estructuras y activos con recubrimientos técnicos que duran décadas y
+          <span class="funnel__headline-accent">aprueban cualquier auditoría regulatoria</span>
         </h1>
 
         <p class="funnel__hero-sub">
-          Descubre cómo Quick Solutions transforma la logística internacional de grandes corporaciones
-          con su metodología IFAC (Ingeniería de Flujo Aduanero Continuo), eliminando retenciones,
-          sobrecostos e imprevistos que paralizan tu operación y destruyen tu margen.
+          Descubre cómo DekorPaint aplica su Método de Recubrimiento Técnico Avanzado en plantas
+          industriales, bodegas, laboratorios, clínicas, cadenas globales y residencias exclusivas —
+          eliminando paradas no programadas, repintes constantes y riesgos normativos que erosionan
+          tu operación y tu patrimonio.
         </p>
 
         <ul class="funnel__benefits" role="list">
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin retenciones de contenedores por errores de clasificación arancelaria
+            Sin paradas de producción por pisos industriales deteriorados
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin sobrecostos ocultos ni reclasificaciones de última hora
+            Sin filtraciones ni humedad que corran estructuras y equipos
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Sin capital de trabajo paralizado por demoras logísticas evitables
+            Sin repintes anuales ni acabados que se decoloren y cuarteen
           </li>
           <li class="funnel__benefit">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            Con previsibilidad financiera absoluta y blindaje corporativo real
+            Con certificación, trazabilidad de materiales y cumplimiento normativo real
           </li>
         </ul>
 
         <div class="funnel__urgency-callout" role="note">
           <i class="fa-solid fa-fire" aria-hidden="true"></i>
-          <span>Para <strong>tomadores de decisiones</strong> que entienden la logística como una <strong>palanca financiera estratégica</strong> — no para quienes buscan el tramitador más barato.</span>
+          <span
+            >Para
+            <strong
+              >directores de planta, gerentes de mantenimiento y propietarios de activos
+              premium</strong
+            >
+            — no para quienes eligen el precio más bajo sobre la calidad certificada.</span
+          >
         </div>
 
         <div class="funnel__vsl-wrap">
-          <div class="funnel__vsl" @click="openModal()" role="button" aria-label="Ver video" tabindex="0">
+          <div
+            class="funnel__vsl"
+            @click="openModal()"
+            role="button"
+            aria-label="Ver video"
+            tabindex="0"
+          >
             <div class="funnel__vsl-bg">
-              <img src="https://fast.wistia.com/embed/medias/bivr0yu5qp/swatch" class="funnel__vsl-thumb" alt="" />
+              <img
+                src="https://fast.wistia.com/embed/medias/e3o2zxds45/swatch"
+                class="funnel__vsl-thumb"
+                alt=""
+              />
               <div class="funnel__vsl-blur-overlay"></div>
             </div>
             <div class="funnel__vsl-overlay">
               <div class="funnel__vsl-play">
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <p class="funnel__vsl-caption">Mira el video y descubre cómo la ingeniería de datos transforma tu cadena de suministro</p>
+              <p class="funnel__vsl-caption">
+                Mira el video y descubre cómo el Método de Recubrimiento Técnico Avanzado protege tu
+                infraestructura
+              </p>
             </div>
           </div>
         </div>
@@ -299,20 +337,21 @@ const dismissProof = () => {
         <div class="funnel__cta-wrap">
           <button class="funnel__cta-btn" @click="openModal()">
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            AGENDAR AUDITORÍA LOGÍSTICA GRATIS
+            AGENDAR MI DIAGNÓSTICO TÉCNICO AVANZADO GRATIS
           </button>
           <p class="funnel__cta-sub">
             <i class="fa-solid fa-lock" aria-hidden="true"></i>
             100% gratuito &nbsp;·&nbsp; Sin compromiso &nbsp;·&nbsp; Cupos limitados
           </p>
         </div>
-
       </div>
     </section>
 
     <section class="funnel__stats" aria-label="Resultados comprobados">
       <div class="funnel__container">
-        <p class="funnel__section-label funnel__section-label--light">Resultados reales — clientes reales</p>
+        <p class="funnel__section-label funnel__section-label--light">
+          Resultados reales — clientes reales
+        </p>
         <div class="funnel__stats-grid">
           <div v-for="stat in stats" :key="stat.number" class="funnel__stat">
             <div class="funnel__stat-icon" aria-hidden="true">
@@ -329,11 +368,11 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__section-label">¿Te identificas con esto?</p>
         <h2 id="problem-heading" class="funnel__section-title">
-          El mito corporativo de que los retrasos e imprevistos son "normales"
+          El mito de que el deterioro de pisos, filtraciones y repintes son "normales"
         </h2>
         <p class="funnel__problem-intro">
-          Contratar a un "tramitador aduanero reactivo" no es un ahorro — es un pasivo que pagas
-          en producción detenida, capital paralizado y penalizaciones de clientes. Esto es lo que
+          Contratar al aplicador más barato no es un ahorro — es un pasivo que pagas en paradas de
+          producción, reparaciones mayores, multas normativas y pérdida de imagen. Esto es lo que
           realmente estás pagando:
         </p>
         <div class="funnel__problem-grid">
@@ -350,23 +389,24 @@ const dismissProof = () => {
 
     <section class="funnel__method" aria-labelledby="method-heading">
       <div class="funnel__container">
-        <p class="funnel__section-label">La metodología IFAC</p>
+        <p class="funnel__section-label">El Método de Recubrimiento Técnico Avanzado</p>
         <h2 id="method-heading" class="funnel__section-title">
-          Tres pilares de ingeniería de flujo aduanero continuo
+          Tres pilares que separan un recubrimiento ordinario de uno técnico
         </h2>
 
         <div class="funnel__pillar-card">
           <div class="funnel__pillar-num" aria-hidden="true">01</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-search"></i>
+              <i class="fa-solid fa-trowel-bricks"></i>
             </div>
-            <h3 class="funnel__pillar-title">Auditoría Técnica y Control Previo Anticipado</h3>
+            <h3 class="funnel__pillar-title">
+              Preparación Mecánica del Sustrato y Perfil de Anclaje
+            </h3>
             <p class="funnel__pillar-body">
-              No esperamos a que el contenedor llegue a puerto para revisar la documentación.
-              Analizamos en origen cada partida arancelaria, certificado y factura antes de que
-              la carga se active en el buque. Resultado: más del 90% de reducción de incidencias
-              y retenciones aduaneras.
+              No aplicamos sobre superficies mal preparadas. Realizamos shot blasting, diamantado o
+              sandblasting según norma para crear el perfil de anclaje que exige el sistema. Esto es
+              lo que determina si el recubrimiento dura 2 años o más de 20.
             </p>
           </div>
         </div>
@@ -375,14 +415,15 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">02</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-arrows-spin"></i>
+              <i class="fa-solid fa-flask"></i>
             </div>
-            <h3 class="funnel__pillar-title">Sincronización Integral de la Cadena Multimodal</h3>
+            <h3 class="funnel__pillar-title">
+              Dosificación de Polímeros Certificados de Alta Performance
+            </h3>
             <p class="funnel__pillar-body">
-              Unificamos transporte internacional (marítimo, aéreo, terrestre), despacho aduanero,
-              estiba y transporte local blindado con candados satelitales y escolta armada.
-              Un solo punto de control para toda la cadena. Optimizamos tiempos de tránsito
-              terrestre hasta en un 32%.
+              Trabajamos con epoxias, poliuretanos cementicios y poliureas de grado industrial,
+              dosificados según ficha técnica y condiciones de uso. Sin mezclas a ojo, sin recetas
+              genéricas: cada proyecto lleva química específica para su carga, tráfico y exposición.
             </p>
           </div>
         </div>
@@ -391,14 +432,13 @@ const dismissProof = () => {
           <div class="funnel__pillar-num" aria-hidden="true">03</div>
           <div class="funnel__pillar-content">
             <div class="funnel__pillar-icon" aria-hidden="true">
-              <i class="fa-solid fa-shield"></i>
+              <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3 class="funnel__pillar-title">Blindaje de Flujo de Caja y Gestión de Riesgos</h3>
+            <h3 class="funnel__pillar-title">Blindaje Regulatorio y Señalización de Seguridad</h3>
             <p class="funnel__pillar-body">
-              Precalculamos matemáticamente cada tasa y tributo para eliminar imprevistos financieros.
-              Estructuramos pólizas de seguro al 100% del valor real de la mercancía. Tu logística
-              deja de ser un centro de costo imprevisible y se convierte en un activo medible
-              de alto rendimiento.
+              Entregamos trazabilidad completa de materiales, especificaciones técnicas y
+              cumplimiento normativo. Además, ejecutamos demarcación y señalización de seguridad
+              industrial para que tu planta pase auditorías sin contratiempos.
             </p>
           </div>
         </div>
@@ -409,7 +449,7 @@ const dismissProof = () => {
       <div class="funnel__container">
         <p class="funnel__section-label">Casos de éxito</p>
         <h2 id="testimonials-heading" class="funnel__section-title">
-          Lo que dicen quienes ya confiaron en Quick Solutions
+          Lo que dicen quienes ya confiaron en DekorPaint
         </h2>
 
         <div class="funnel__test-carousel">
@@ -458,21 +498,38 @@ const dismissProof = () => {
         </div>
         <div class="funnel__authority-content">
           <p class="funnel__authority-eyebrow">Líder y Fundador</p>
-          <h2 id="authority-heading" class="funnel__authority-name">Jefferson Bazán</h2>
-          <p class="funnel__authority-role">Arquitecto de la Cadena de Suministro — Ingeniería de Datos</p>
+          <h2 id="authority-heading" class="funnel__authority-name">Alejandro Bravo</h2>
+          <p class="funnel__authority-role">
+            Director Técnico — Recubrimientos Industriales y Arquitectónicos
+          </p>
           <p class="funnel__authority-bio">
-            En los inicios, operábamos como el 99% de las agencias: reactivos. Hasta que una gran
-            industria metalúrgica sufrió la retención de maquinaria pesada por casi un mes debido a
-            un error milimétrico del broker en el certificado de origen. Su gerente general me dijo:
-            <strong>"No necesito un bombero que me cobre por apagar el incendio cuando mi fábrica ya
-            está parada. Necesito un socio estratégico que evite que el incendio ocurra."</strong>
-            Eso cambió todo. Hoy la metodología IFAC es la respuesta a esa sentencia.
+            En los inicios, aplicábamos como muchos: capas de pintura sobre lo que el cliente traía.
+            Hasta que una planta industrial sufrió una parada por deterioro de piso a los 8 meses de
+            un trabajo mal ejecutado. Su gerente de operaciones me dijo:
+            <strong
+              >"No necesito al más barato. Necesito un socio técnico que garantice durabilidad y no
+              me cierre la planta cada año."</strong
+            >
+            Eso cambió todo. Hoy el Método de Recubrimiento Técnico Avanzado es la respuesta a esa
+            exigencia.
           </p>
           <ul class="funnel__authority-creds" role="list">
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en ingeniería de flujo aduanero continuo</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Certificación en gestión de cadenas multimodales internacionales</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: de la auditoría en origen al blindaje financiero</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo acepto 5 nuevas cuentas corporativas al mes</li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Especialista en
+              recubrimientos epoxi, poliuretano y poliurea de alto performance
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Certificación en
+              preparación de sustratos y aplicación de sistemas industriales
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Gestión integral: del
+              diagnóstico técnico al cumplimiento normativo y señalización
+            </li>
+            <li>
+              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Solo abrimos 5 proyectos
+              de gran escala al mes
+            </li>
           </ul>
         </div>
       </div>
@@ -482,24 +539,25 @@ const dismissProof = () => {
       <div class="funnel__container">
         <div class="funnel__scarcity-badge">
           <i class="fa-solid fa-gem" aria-hidden="true"></i>
-          Atención personalizada de Jefferson Bazán
+          Atención personalizada de Alejandro Bravo
         </div>
         <h2 id="scarcity-heading" class="funnel__scarcity-title">
-          Solo aceptamos <span class="funnel__scarcity-accent">5 nuevos clientes corporativos al mes</span>
+          Solo abrimos
+          <span class="funnel__scarcity-accent">5 proyectos de gran escala al mes</span>
         </h2>
         <p class="funnel__scarcity-sub">
-          Para garantizar el nivel de análisis y personalización que nos distingue, cada cliente
-          pasa por la revisión directa de nuestro equipo de ingenieros senior. Cuando se llenan
-          los 5 cupos, el resto espera al siguiente mes.
+          Para garantizar el nivel de preparación, dosificación y blindaje regulatorio que nos
+          distingue, cada proyecto pasa por la supervisión directa de nuestro equipo técnico. Cuando
+          se llenan los 5 cupos, el resto espera al siguiente mes.
         </p>
         <p class="funnel__scarcity-cta-text">
-          Agenda hoy tu <strong>Sesión de Diagnóstico de Auditoría Logística y Aduanera Completa</strong>
-          sin costo — 30 minutos en los que analizaremos tu matriz de costos, partidas arancelarias
-          y rutas logísticas para identificar ahorros y riesgos ocultos.
+          Agenda hoy tu <strong>Diagnóstico Técnico Avanzado Gratis</strong>
+          sin costo — 30 minutos en los que analizaremos tu sustrato, condiciones de uso y riesgos
+          normativos para diseñar el recubrimiento correcto desde el primer día.
         </p>
         <button class="funnel__cta-btn funnel__cta-btn--final" @click="openModal()">
           <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          AGENDAR MI AUDITORÍA LOGÍSTICA GRATIS
+          AGENDAR MI DIAGNÓSTICO TÉCNICO AVANZADO GRATIS
         </button>
         <p class="funnel__cta-sub">
           <i class="fa-solid fa-lock" aria-hidden="true"></i>
@@ -510,18 +568,17 @@ const dismissProof = () => {
 
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <h2 class="funnel__footer-logo-text">QUICK SOLUTIONS</h2>
-        <p class="funnel__footer-desc">Arquitectos de la Cadena de Suministro</p>
+        <h2 class="funnel__footer-logo-text">DEKORPAINT</h2>
+        <p class="funnel__footer-desc">Recubrimientos Técnicos Avanzados</p>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
           <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
         <p class="funnel__footer-copy">
-          © {{ new Date().getFullYear() }} Quick Solutions. Todos los derechos reservados.
+          © {{ new Date().getFullYear() }} DekorPaint. Todos los derechos reservados.
         </p>
       </div>
     </footer>
-
   </div>
 
   <RegistrationModal :open="modalOpen" @close="modalOpen = false" />
@@ -541,13 +598,15 @@ const dismissProof = () => {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    @media (min-width: 768px) { padding: 0 2rem; }
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
   }
 }
 
 .funnel__topbar {
   background: #ffffff;
-  border-bottom: 1px solid #E8EDF5;
+  border-bottom: 1px solid #e8edf5;
   padding: 0.9rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -566,7 +625,7 @@ const dismissProof = () => {
 
 .funnel__logo-sub {
   font-size: 0.68rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0;
@@ -606,7 +665,9 @@ const dismissProof = () => {
   gap: 0.6rem;
   flex-wrap: wrap;
   justify-content: center;
-  @media (min-width: 768px) { flex-wrap: nowrap; }
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .funnel__urgency-cta {
@@ -627,18 +688,28 @@ const dismissProof = () => {
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   animation: cta-bounce 2.4s ease-in-out infinite;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 
-  span { font-size: 0.95rem; transition: transform 0.18s ease; }
-
-  &:hover {
-    background: #FFF5F5;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    span { transform: translateX(3px); }
+  span {
+    font-size: 0.95rem;
+    transition: transform 0.18s ease;
   }
 
-  &:active { transform: translateY(0); }
+  &:hover {
+    background: #fff5f5;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    span {
+      transform: translateX(3px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 
   @media (min-width: 768px) {
     padding: 0.55rem 1.2rem;
@@ -647,8 +718,15 @@ const dismissProof = () => {
 }
 
 @keyframes cta-bounce {
-  0%, 100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transform: scale(1); }
-  50%      { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); transform: scale(1.04); }
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.04);
+  }
 }
 
 .funnel__proof {
@@ -709,8 +787,14 @@ const dismissProof = () => {
   line-height: 1.3;
   color: colors.$OS-NAVY;
 
-  strong { font-weight: 800; }
-  span { font-size: 0.74rem; color: rgba(colors.$OS-NAVY, 0.55); font-weight: 500; }
+  strong {
+    font-weight: 800;
+  }
+  span {
+    font-size: 0.74rem;
+    color: rgba(colors.$OS-NAVY, 0.55);
+    font-weight: 500;
+  }
 }
 
 .funnel__proof-text {
@@ -718,7 +802,10 @@ const dismissProof = () => {
   font-size: 0.82rem;
   line-height: 1.35;
   color: rgba(colors.$OS-NAVY, 0.78);
-  strong { color: colors.$OS-NAVY; font-weight: 700; }
+  strong {
+    color: colors.$OS-NAVY;
+    font-weight: 700;
+  }
 }
 
 .funnel__proof-meta {
@@ -728,7 +815,9 @@ const dismissProof = () => {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  i { font-size: 0.66rem; }
+  i {
+    font-size: 0.66rem;
+  }
 }
 
 .funnel__proof-close {
@@ -746,15 +835,24 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   font-size: 0.78rem;
-  transition: background 0.15s, color 0.15s;
-  &:hover { background: rgba(colors.$OS-NAVY, 0.08); color: colors.$OS-NAVY; }
+  transition:
+    background 0.15s,
+    color 0.15s;
+  &:hover {
+    background: rgba(colors.$OS-NAVY, 0.08);
+    color: colors.$OS-NAVY;
+  }
 }
 
 .proof-fade-enter-active {
-  transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition:
+    opacity 0.32s ease,
+    transform 0.42s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 .proof-fade-leave-active {
-  transition: opacity 0.22s ease, transform 0.25s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.25s ease;
 }
 .proof-fade-enter-from {
   opacity: 0;
@@ -773,12 +871,23 @@ const dismissProof = () => {
 }
 
 @keyframes bolt-flash {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.92); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
 }
 
 .funnel__urgency-text {
-  strong { font-weight: 900; color: #FFE4E4; letter-spacing: 0.04em; }
+  strong {
+    font-weight: 900;
+    color: #ffe4e4;
+    letter-spacing: 0.04em;
+  }
 }
 
 .funnel__urgency-dot {
@@ -792,9 +901,18 @@ const dismissProof = () => {
 }
 
 @keyframes dot-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); transform: scale(1); }
-  70% { box-shadow: 0 0 0 8px rgba(255, 107, 107, 0); transform: scale(1.1); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); transform: scale(1); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 107, 107, 0);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    transform: scale(1);
+  }
 }
 
 .funnel__timer {
@@ -817,9 +935,16 @@ const dismissProof = () => {
     line-height: 1;
     font-variant-numeric: tabular-nums;
     color: #ffffff;
-    @media (min-width: 768px) { font-size: 2rem; }
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
-  small { font-size: 0.72rem; opacity: 0.85; font-weight: 700; text-transform: uppercase; }
+  small {
+    font-size: 0.72rem;
+    opacity: 0.85;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 .funnel__timer-sep {
@@ -828,7 +953,9 @@ const dismissProof = () => {
   opacity: 0.7;
   padding: 0 2px;
   line-height: 1;
-  @media (min-width: 768px) { font-size: 1.7rem; }
+  @media (min-width: 768px) {
+    font-size: 1.7rem;
+  }
 }
 
 .funnel__urgency-callout {
@@ -845,8 +972,15 @@ const dismissProof = () => {
   color: colors.$OS-DARK;
   font-weight: 600;
 
-  i { color: colors.$QS-URGENT; font-size: 1.15rem; flex-shrink: 0; }
-  strong { color: colors.$QS-URGENT-DARK; font-weight: 800; }
+  i {
+    color: colors.$QS-URGENT;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+  strong {
+    color: colors.$QS-URGENT-DARK;
+    font-weight: 800;
+  }
 
   @media (min-width: 768px) {
     font-size: 1rem;
@@ -856,7 +990,7 @@ const dismissProof = () => {
 
 .funnel__hero {
   padding: 3.5rem 0 3rem;
-  background: linear-gradient(180deg, #EEF4FF 0%, #ffffff 70%);
+  background: linear-gradient(180deg, #eef4ff 0%, #ffffff 70%);
 }
 
 .funnel__eyebrow {
@@ -874,7 +1008,9 @@ const dismissProof = () => {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0 0 1.4rem;
-  i { font-size: 0.8rem; }
+  i {
+    font-size: 0.8rem;
+  }
 }
 
 .funnel__headline {
@@ -885,17 +1021,22 @@ const dismissProof = () => {
   margin: 0 0 1rem;
   letter-spacing: -0.025em;
 
-  &-accent { color: colors.$OS-RED; }
+  &-accent {
+    color: colors.$OS-RED;
+  }
 }
 
 .funnel__hero-sub {
   font-size: 1rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.65;
   margin: 0 0 1.5rem;
   max-width: 720px;
 
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+  strong {
+    color: colors.$OS-DARK;
+    font-weight: 700;
+  }
 }
 
 .funnel__benefits {
@@ -912,12 +1053,18 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
 
-  i { color: colors.$OS-BLUE; font-size: 0.82rem; flex-shrink: 0; }
+  i {
+    color: colors.$OS-BLUE;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
 }
 
-.funnel__vsl-wrap { margin-bottom: 2rem; }
+.funnel__vsl-wrap {
+  margin-bottom: 2rem;
+}
 
 .funnel__vsl {
   position: relative;
@@ -926,12 +1073,20 @@ const dismissProof = () => {
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #D8E6F5;
+  border: 2px solid #d8e6f5;
   box-shadow: 0 8px 40px rgba(0, 82, 165, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
-  &:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(0, 82, 165, 0.2); }
-  &:focus-visible { outline: 3px solid colors.$OS-BLUE; outline-offset: 2px; }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(0, 82, 165, 0.2);
+  }
+  &:focus-visible {
+    outline: 3px solid colors.$OS-BLUE;
+    outline-offset: 2px;
+  }
 }
 
 .funnel__vsl-bg {
@@ -951,15 +1106,25 @@ const dismissProof = () => {
   object-fit: cover;
   filter: blur(8px) brightness(0.6);
   transform: scale(1.1);
-  transition: filter 0.4s ease, transform 0.4s ease, brightness 0.4s ease;
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease,
+    brightness 0.4s ease;
 
-  .funnel__vsl:hover & { filter: blur(4px) brightness(0.75); transform: scale(1.05); }
+  .funnel__vsl:hover & {
+    filter: blur(4px) brightness(0.75);
+    transform: scale(1.05);
+  }
 }
 
 .funnel__vsl-blur-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(colors.$OS-NAVY, 0.2) 0%, rgba(colors.$OS-NAVY, 0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(colors.$OS-NAVY, 0.2) 0%,
+    rgba(colors.$OS-NAVY, 0.6) 100%
+  );
   z-index: 1;
 }
 
@@ -984,8 +1149,14 @@ const dismissProof = () => {
   justify-content: center;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
-  .funnel__vsl:hover & { transform: scale(1.1); }
-  i { color: colors.$OS-RED; font-size: 1.7rem; margin-left: 5px; }
+  .funnel__vsl:hover & {
+    transform: scale(1.1);
+  }
+  i {
+    color: colors.$OS-RED;
+    font-size: 1.7rem;
+    margin-left: 5px;
+  }
 }
 
 .funnel__vsl-caption {
@@ -1022,11 +1193,20 @@ const dismissProof = () => {
   cursor: pointer;
   width: 100%;
   max-width: 520px;
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(204, 0, 0, 0.35);
 
-  &:hover { background: #AA0000; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45); }
-  &:active { transform: translateY(0); }
+  &:hover {
+    background: #aa0000;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(204, 0, 0, 0.45);
+  }
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .funnel__cta-sub {
@@ -1035,9 +1215,11 @@ const dismissProof = () => {
   justify-content: center;
   gap: 0.4rem;
   font-size: 0.78rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0;
-  i { font-size: 0.72rem; }
+  i {
+    font-size: 0.72rem;
+  }
 }
 
 .funnel__stats {
@@ -1054,17 +1236,24 @@ const dismissProof = () => {
   color: colors.$OS-NAVY;
   margin: 0 0 1rem;
 
-  &--light { color: rgba(#ffffff, 0.55); }
+  &--light {
+    color: rgba(#ffffff, 0.55);
+  }
 }
 
 .funnel__stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  @media (max-width: 580px) { grid-template-columns: 1fr; gap: 1.75rem; }
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
 }
 
-.funnel__stat { text-align: center; }
+.funnel__stat {
+  text-align: center;
+}
 
 .funnel__stat-icon {
   font-size: 1.6rem;
@@ -1105,7 +1294,7 @@ const dismissProof = () => {
 
 .funnel__problem-intro {
   font-size: 0.95rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0 0 1.5rem;
 }
@@ -1121,8 +1310,8 @@ const dismissProof = () => {
   gap: 1rem;
   align-items: flex-start;
   padding: 1.25rem;
-  background: #F9FBFF;
-  border: 1px solid #E4EDF7;
+  background: #f9fbff;
+  border: 1px solid #e4edf7;
   border-radius: 12px;
 
   strong {
@@ -1134,7 +1323,7 @@ const dismissProof = () => {
   }
   p {
     font-size: 0.86rem;
-    color: #4A5F7A;
+    color: #4a5f7a;
     line-height: 1.5;
     margin: 0;
   }
@@ -1149,7 +1338,7 @@ const dismissProof = () => {
 
 .funnel__method {
   padding: 4rem 0;
-  background: #F5F8FF;
+  background: #f5f8ff;
 }
 
 .funnel__method .funnel__container {
@@ -1163,13 +1352,16 @@ const dismissProof = () => {
   gap: 1.5rem;
   align-items: flex-start;
   background: #ffffff;
-  border: 1px solid #E4EDF7;
+  border: 1px solid #e4edf7;
   border-radius: 16px;
   padding: 1.75rem 2rem;
   position: relative;
   box-shadow: 0 2px 12px rgba(0, 82, 165, 0.05);
 
-  @media (max-width: 640px) { flex-direction: column; padding: 1.5rem; }
+  @media (max-width: 640px) {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
 }
 
 .funnel__pillar-num {
@@ -1195,7 +1387,10 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.85rem;
-  i { color: #ffffff; font-size: 1.1rem; }
+  i {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
 }
 
 .funnel__pillar-title {
@@ -1207,7 +1402,7 @@ const dismissProof = () => {
 
 .funnel__pillar-body {
   font-size: 0.9rem;
-  color: #4A5F7A;
+  color: #4a5f7a;
   line-height: 1.6;
   margin: 0;
 }
@@ -1224,7 +1419,7 @@ const dismissProof = () => {
 }
 
 .funnel__test-card {
-  background: #F5F8FF;
+  background: #f5f8ff;
   border: 1px solid rgba(colors.$OS-NAVY, 0.1);
   border-left: 4px solid colors.$OS-NAVY;
   border-radius: 16px;
@@ -1255,8 +1450,16 @@ const dismissProof = () => {
   align-items: center;
   gap: 0.75rem;
 
-  strong { display: block; color: colors.$OS-DARK; font-size: 0.9rem; font-weight: 700; }
-  span { font-size: 0.78rem; color: #8A9BB5; }
+  strong {
+    display: block;
+    color: colors.$OS-DARK;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  span {
+    font-size: 0.78rem;
+    color: #8a9bb5;
+  }
 }
 
 .funnel__test-avatar {
@@ -1268,7 +1471,10 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  i { color: #ffffff; font-size: 1.2rem; }
+  i {
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
 }
 
 .funnel__test-dots {
@@ -1283,30 +1489,42 @@ const dismissProof = () => {
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: #D0DBE8;
+  background: #d0dbe8;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
   padding: 0;
 
-  &.active { background: colors.$OS-NAVY; transform: scale(1.3); }
-  &:hover { background: colors.$OS-BLUE; }
+  &.active {
+    background: colors.$OS-NAVY;
+    transform: scale(1.3);
+  }
+  &:hover {
+    background: colors.$OS-BLUE;
+  }
 }
 
 .funnel__authority {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #EEF4FF 0%, #F9FBFF 100%);
-  border-top: 1px solid #E4EDF7;
-  border-bottom: 1px solid #E4EDF7;
+  background: linear-gradient(135deg, #eef4ff 0%, #f9fbff 100%);
+  border-top: 1px solid #e4edf7;
+  border-bottom: 1px solid #e4edf7;
 }
 
 .funnel__authority-inner {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
-  @media (max-width: 640px) { flex-direction: column; align-items: center; }
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.funnel__authority-photo-wrap { flex-shrink: 0; }
+.funnel__authority-photo-wrap {
+  flex-shrink: 0;
+}
 
 .funnel__authority-avatar {
   width: 112px;
@@ -1318,10 +1536,15 @@ const dismissProof = () => {
   justify-content: center;
   border: 4px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 82, 165, 0.2);
-  i { color: rgba(#ffffff, 0.7); font-size: 3rem; }
+  i {
+    color: rgba(#ffffff, 0.7);
+    font-size: 3rem;
+  }
 }
 
-.funnel__authority-content { flex: 1; }
+.funnel__authority-content {
+  flex: 1;
+}
 
 .funnel__authority-eyebrow {
   font-family: fonts.$font-interface;
@@ -1343,16 +1566,19 @@ const dismissProof = () => {
 
 .funnel__authority-role {
   font-size: 0.88rem;
-  color: #8A9BB5;
+  color: #8a9bb5;
   margin: 0 0 1rem;
 }
 
 .funnel__authority-bio {
   font-size: 0.93rem;
-  color: #3A4F6A;
+  color: #3a4f6a;
   line-height: 1.65;
   margin: 0 0 1rem;
-  strong { color: colors.$OS-DARK; font-weight: 700; }
+  strong {
+    color: colors.$OS-DARK;
+    font-weight: 700;
+  }
 }
 
 .funnel__authority-creds {
@@ -1368,8 +1594,12 @@ const dismissProof = () => {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.86rem;
-    color: #3A4F6A;
-    i { color: colors.$OS-BLUE; font-size: 0.82rem; flex-shrink: 0; }
+    color: #3a4f6a;
+    i {
+      color: colors.$OS-BLUE;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -1394,7 +1624,10 @@ const dismissProof = () => {
   text-transform: uppercase;
   color: rgba(#ffffff, 0.75);
   margin-bottom: 1rem;
-  i { color: rgba(#ffffff, 0.5); font-size: 0.8rem; }
+  i {
+    color: rgba(#ffffff, 0.5);
+    font-size: 0.8rem;
+  }
 }
 
 .funnel__scarcity-title {
@@ -1406,7 +1639,9 @@ const dismissProof = () => {
   line-height: 1.15;
 }
 
-.funnel__scarcity-accent { color: colors.$OS-RED; }
+.funnel__scarcity-accent {
+  color: colors.$OS-RED;
+}
 
 .funnel__scarcity-sub {
   font-size: 1rem;
@@ -1423,7 +1658,10 @@ const dismissProof = () => {
   max-width: 560px;
   line-height: 1.55;
 
-  strong { color: #ffffff; font-weight: 700; }
+  strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
 }
 
 .funnel__cta-btn--final {
@@ -1431,10 +1669,14 @@ const dismissProof = () => {
   background: colors.$OS-RED;
   box-shadow: 0 4px 24px rgba(204, 0, 0, 0.4);
   max-width: 560px;
-  &:hover { background: #AA0000; }
+  &:hover {
+    background: #aa0000;
+  }
 }
 
-.funnel__scarcity .funnel__cta-sub { color: rgba(#ffffff, 0.5); }
+.funnel__scarcity .funnel__cta-sub {
+  color: rgba(#ffffff, 0.5);
+}
 
 .funnel__footer {
   background: colors.$OS-DARK;
@@ -1473,7 +1715,9 @@ const dismissProof = () => {
     color: rgba(#ffffff, 0.45);
     text-decoration: none;
     transition: color 0.2s;
-    &:hover { color: rgba(#ffffff, 0.85); }
+    &:hover {
+      color: rgba(#ffffff, 0.85);
+    }
   }
 }
 

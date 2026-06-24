@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <footer class="booked-footer">
@@ -8,9 +7,7 @@
         Política de Privacidad
       </router-link>
       <span class="booked-footer__separator" aria-hidden="true">·</span>
-      <router-link to="/aviso-legal" class="booked-footer__link">
-        Aviso Legal
-      </router-link>
+      <router-link to="/aviso-legal" class="booked-footer__link"> Aviso Legal </router-link>
     </nav>
     <p class="booked-footer__copy">
       © {{ new Date().getFullYear() }} Aluvicopp.
@@ -28,11 +25,13 @@
   width: 100%;
   padding: 2.5rem 1.5rem 3.5rem;
   text-align: center;
-  border-top: 1px solid #F0F4FB;
-  background: #FAFBFF;
+  border-top: 1px solid #f0f4fb;
+  background: #fafbff;
   margin-top: auto;
 
-  @media (min-width: 768px) { padding: 4rem 2rem; }
+  @media (min-width: 768px) {
+    padding: 4rem 2rem;
+  }
 
   &__links {
     display: flex;
@@ -40,34 +39,50 @@
     justify-content: center;
     gap: 0.85rem;
     margin-bottom: 1.25rem;
-    @media (min-width: 768px) { gap: 1.5rem; margin-bottom: 1.5rem; }
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__link {
     @include fonts.interface-font(500);
     font-size: 0.72rem;
-    color: #B0C0D5;
+    color: #b0c0d5;
     text-decoration: none;
     transition: color 0.3s ease;
-    &:hover { color: colors.$OS-NAVY; }
-    @media (min-width: 768px) { font-size: 0.85rem; }
+    &:hover {
+      color: colors.$OS-NAVY;
+    }
+    @media (min-width: 768px) {
+      font-size: 0.85rem;
+    }
   }
 
-  &__separator { color: #D0DBE8; font-size: 1rem; line-height: 1; }
+  &__separator {
+    color: #d0dbe8;
+    font-size: 1rem;
+    line-height: 1;
+  }
 
   &__copy {
     @include fonts.interface-font(500);
     font-size: 0.65rem;
-    color: #C8D8ED;
+    color: #c8d8ed;
     margin: 0;
     line-height: 1.8;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    @media (min-width: 768px) { font-size: 0.72rem; letter-spacing: 2.2px; }
+    @media (min-width: 768px) {
+      font-size: 0.72rem;
+      letter-spacing: 2.2px;
+    }
   }
 }
 
 .mobile-break {
-  @media (min-width: 640px) { display: none; }
+  @media (min-width: 640px) {
+    display: none;
+  }
 }
 </style>
