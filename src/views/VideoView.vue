@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import CalendarModal from '@/components/CalendarModal.vue'
 import { trackStage, generateEventId } from '@/utils/ghl'
 import { useContactStore } from '@/stores/contact'
+import dekorpaintLogo from '@/assets/logos/image.png'
 
 const contactStore = useContactStore()
 const calendarOpen = ref(false)
@@ -103,7 +104,7 @@ onUnmounted(() => {
 <template>
   <div class="vv-page">
     <header class="vv-topbar">
-      <h2 class="vv-topbar__logo-text">DEKORPAINT</h2>
+      <img :src="dekorpaintLogo" alt="DekorPaint" class="vv-topbar__logo-img" />
     </header>
 
     <main class="vv-main">
@@ -230,7 +231,7 @@ onUnmounted(() => {
       >
         <div class="capture-modal">
           <div class="capture-modal__header">
-            <h2 class="capture-modal__logo-text">DEKORPAINT</h2>
+            <img :src="dekorpaintLogo" alt="DekorPaint" class="capture-modal__logo-img" />
             <h2 id="capture-title" class="capture-modal__title">
               Antes de ver el video, <span>confirma tus datos</span>
             </h2>
@@ -364,13 +365,10 @@ onUnmounted(() => {
   z-index: 100;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 
-  &__logo-text {
-    font-family: fonts.$font-principal;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.05em;
-    color: colors.$OS-NAVY;
-    margin: 0;
+  &__logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 }
 
@@ -730,13 +728,11 @@ onUnmounted(() => {
     border-bottom: 1px solid #e8edf5;
   }
 
-  &__logo-text {
-    font-family: fonts.$font-principal;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.05em;
-    color: colors.$OS-NAVY;
-    margin-bottom: 1rem;
+  &__logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    margin: 0 auto 1rem;
   }
 
   &__title {

@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import RegistrationModal from '@/components/RegistrationModal.vue'
 import { captureFbParams } from '@/utils/fbclid'
+import dekorpaintLogo from '@/assets/logos/image.png'
 
 const router = useRouter()
 const modalOpen = ref(false)
@@ -183,7 +184,7 @@ const dismissProof = () => {
 <template>
   <div class="funnel">
     <header class="funnel__topbar">
-      <h2 class="funnel__logo-text">DEKORPAINT</h2>
+      <img :src="dekorpaintLogo" alt="DekorPaint" class="funnel__logo-img" />
       <p class="funnel__logo-sub">Recubrimientos Técnicos Avanzados</p>
     </header>
 
@@ -568,7 +569,7 @@ const dismissProof = () => {
 
     <footer class="funnel__footer">
       <div class="funnel__container funnel__footer-inner">
-        <h2 class="funnel__footer-logo-text">DEKORPAINT</h2>
+        <img :src="dekorpaintLogo" alt="DekorPaint" class="funnel__footer-logo-img" />
         <p class="funnel__footer-desc">Recubrimientos Técnicos Avanzados</p>
         <nav class="funnel__footer-links" aria-label="Legal">
           <RouterLink to="/politicas-privacidad">Política de Privacidad</RouterLink>
@@ -615,12 +616,10 @@ const dismissProof = () => {
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 
-.funnel__logo-text {
-  @include fonts.heading-font(800);
-  font-size: 1.3rem;
-  letter-spacing: 0.1em;
-  color: colors.$OS-NAVY;
-  margin: 0;
+.funnel__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .funnel__logo-sub {
@@ -1691,12 +1690,11 @@ const dismissProof = () => {
   text-align: center;
 }
 
-.funnel__footer-logo-text {
-  @include fonts.heading-font(800);
-  font-size: 1.1rem;
-  color: rgba(#ffffff, 0.7);
-  letter-spacing: 0.08em;
-  margin: 0;
+.funnel__footer-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  opacity: 0.7;
 }
 
 .funnel__footer-desc {

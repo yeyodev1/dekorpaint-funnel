@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
+import dekorpaintLogo from '@/assets/logos/image.png'
 
 const router = useRouter()
 const iframeHeight = ref(1100)
@@ -54,7 +55,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
 <template>
   <div class="booking">
     <header class="booking__topbar">
-      <h2 class="booking__logo-text">DEKORPAINT</h2>
+      <img :src="dekorpaintLogo" alt="DekorPaint" class="booking__logo-img" />
     </header>
 
     <main class="booking__main">
@@ -138,13 +139,10 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.booking__logo-text {
-  font-family: fonts.$font-principal;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  color: colors.$OS-NAVY;
-  margin: 0;
+.booking__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .booking__main {

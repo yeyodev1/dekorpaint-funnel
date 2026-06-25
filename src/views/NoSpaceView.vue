@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import dekorpaintLogo from '@/assets/logos/image.png'
 
 const COOLDOWN_MS = 48 * 60 * 60 * 1000
 
@@ -30,7 +31,7 @@ onMounted(() => {
 <template>
   <div class="nospace">
     <header class="nospace__topbar">
-      <h2 class="nospace__logo-text">DEKORPAINT</h2>
+      <img :src="dekorpaintLogo" alt="DekorPaint" class="nospace__logo-img" />
     </header>
 
     <main class="nospace__main">
@@ -117,13 +118,10 @@ onMounted(() => {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.nospace__logo-text {
-  font-family: fonts.$font-principal;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  color: colors.$OS-NAVY;
-  margin: 0;
+.nospace__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nospace__main {

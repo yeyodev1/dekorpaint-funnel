@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import dekorpaintLogo from '@/assets/logos/image.png'
 
 const contactName = computed(() => {
   try {
@@ -50,7 +51,7 @@ const nextSteps = [
 <template>
   <div class="booked">
     <header class="booked__topbar">
-      <h2 class="booked__logo-text">DEKORPAINT</h2>
+      <img :src="dekorpaintLogo" alt="DekorPaint" class="booked__logo-img" />
     </header>
 
     <main class="booked__main">
@@ -169,13 +170,10 @@ const nextSteps = [
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
-.booked__logo-text {
-  font-family: fonts.$font-principal;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  color: colors.$OS-NAVY;
-  margin: 0;
+.booked__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .booked__main {

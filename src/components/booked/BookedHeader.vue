@@ -1,11 +1,10 @@
 <script setup lang="ts">
-const LOGO =
-  'https://res.cloudinary.com/dpuody0df/image/upload/v1775587085/bakano/logos/bakano-light.png'
+import dekorpaintLogo from '@/assets/logos/image.png'
 </script>
 
 <template>
   <header class="booked-header">
-    <h2 class="booked-header__logo-text">ALUVICOPP</h2>
+    <img :src="dekorpaintLogo" alt="DekorPaint" class="booked-header__logo-img" />
   </header>
 </template>
 
@@ -23,13 +22,10 @@ const LOGO =
   top: 0;
   z-index: 100;
 
-  &__logo-text {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.1em;
-    color: #ffffff;
-    margin: 0;
+  &__logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 }
 </style>
