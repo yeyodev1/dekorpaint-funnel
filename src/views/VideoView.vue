@@ -464,7 +464,7 @@ onUnmounted(() => {
   aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 82, 165, 0.12);
+  box-shadow: 0 8px 32px rgba(32, 59, 114, 0.12);
   border: 1px solid #e4edf7;
   background: colors.$OS-NAVY;
 
@@ -596,7 +596,7 @@ onUnmounted(() => {
   height: 90px;
   border-radius: 50%;
   border: 3px solid #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 82, 165, 0.15);
+  box-shadow: 0 4px 16px rgba(32, 59, 114, 0.15);
   overflow: hidden;
   background: colors.$OS-NAVY;
   display: flex;

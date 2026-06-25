@@ -264,7 +264,7 @@ const nextSteps = [
   border-radius: 14px;
   padding: 1.5rem 1.25rem;
   position: relative;
-  box-shadow: 0 2px 10px rgba(0, 82, 165, 0.04);
+  box-shadow: 0 2px 10px rgba(32, 59, 114, 0.04);
 }
 
 .booked__step-num {
@@ -332,7 +332,7 @@ const nextSteps = [
   justify-content: center;
   flex-shrink: 0;
   border: 3px solid #ffffff;
-  box-shadow: 0 3px 12px rgba(0, 82, 165, 0.15);
+  box-shadow: 0 3px 12px rgba(32, 59, 114, 0.15);
   i {
     color: rgba(#ffffff, 0.85);
     font-size: 2rem;

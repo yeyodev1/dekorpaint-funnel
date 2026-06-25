@@ -266,7 +266,7 @@ onUnmounted(() => window.removeEventListener('message', onMessage))
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid #e4edf7;
-  box-shadow: 0 4px 24px rgba(0, 82, 165, 0.07);
+  box-shadow: 0 4px 24px rgba(32, 59, 114, 0.07);
 }
 
 .calendar__iframe {

@@ -1073,14 +1073,14 @@ const dismissProof = () => {
   overflow: hidden;
   cursor: pointer;
   border: 2px solid #d8e6f5;
-  box-shadow: 0 8px 40px rgba(0, 82, 165, 0.12);
+  box-shadow: 0 8px 40px rgba(32, 59, 114, 0.12);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 48px rgba(0, 82, 165, 0.2);
+    box-shadow: 0 16px 48px rgba(32, 59, 114, 0.2);
   }
   &:focus-visible {
     outline: 3px solid colors.$OS-BLUE;
@@ -1355,7 +1355,7 @@ const dismissProof = () => {
   border-radius: 16px;
   padding: 1.75rem 2rem;
   position: relative;
-  box-shadow: 0 2px 12px rgba(0, 82, 165, 0.05);
+  box-shadow: 0 2px 12px rgba(32, 59, 114, 0.05);
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -1425,7 +1425,7 @@ const dismissProof = () => {
   padding: 2rem;
   max-width: 720px;
   margin: 0 auto;
-  box-shadow: 0 4px 24px rgba(0, 82, 165, 0.07);
+  box-shadow: 0 4px 24px rgba(32, 59, 114, 0.07);
 }
 
 .funnel__test-quote {
@@ -1534,7 +1534,7 @@ const dismissProof = () => {
   align-items: center;
   justify-content: center;
   border: 4px solid #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 82, 165, 0.2);
+  box-shadow: 0 4px 20px rgba(32, 59, 114, 0.2);
   i {
     color: rgba(#ffffff, 0.7);
     font-size: 3rem;
