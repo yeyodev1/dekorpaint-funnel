@@ -87,10 +87,9 @@ Webhook de registro por defecto en `RegistrationModal.vue`:
 
 ## Meta Pixel
 
-- ID actual: `1886197448722189`.
+- ID actual: `2330357677497487`.
 - Eventos trackeados: `PageView`, `ViewContent`, `CompleteRegistration`, `Lead`.
 - Parámetros de atribución se capturan en `sessionStorage['os_fb']` vía `src/utils/fbclid.ts`.
-- **Nota**: el Pixel ID debería actualizarse al de DekorPaint cuando esté disponible.
 
 ## Convenciones de estilo / UX
 
